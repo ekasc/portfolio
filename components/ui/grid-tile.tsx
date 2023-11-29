@@ -1,12 +1,11 @@
 import { cn } from "@/lib/utils";
 
-export function GridTile({
-	children,
-	className,
-}: {
+interface GridProps extends React.HTMLAttributes<HTMLDivElement> {
 	children: React.ReactNode;
 	className?: string;
-}) {
+}
+
+export function GridTile({ children, className }: GridProps) {
 	return (
 		<div
 			className={cn(

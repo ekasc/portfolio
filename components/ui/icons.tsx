@@ -1,9 +1,12 @@
+import { cn } from "@/lib/utils";
+
 export function TwitterIcon() {
 	return (
 		<>
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
-				className="lg:w-11 lg:h-11 w-6 h-6"viewBox="0,0,256,256"
+				className="lg:w-11 lg:h-11 w-6 h-6"
+				viewBox="0,0,256,256"
 			>
 				<g
 					className="fill-foreground"
@@ -34,7 +37,8 @@ export function TailwindcssIcon() {
 	return (
 		<>
 			<svg
-				className="lg:w-11 lg:h-11 w-6 h-6"xmlns="http://www.w3.org/2000/svg"
+				className="lg:w-11 lg:h-11 w-6 h-6"
+				xmlns="http://www.w3.org/2000/svg"
 				viewBox="0 0 128 128"
 			>
 				<path
@@ -53,7 +57,8 @@ export function NextjsIcon() {
 				xmlns="http://www.w3.org/2000/svg"
 				x="0px"
 				y="0px"
-				className="lg:w-11 lg:h-11 w-6 h-6"viewBox="0,0,256,256"
+				className="lg:w-11 lg:h-11 w-6 h-6"
+				viewBox="0,0,256,256"
 			>
 				<g
 					fillOpacity="0"
@@ -106,7 +111,8 @@ export function SvelteIcon() {
 	return (
 		<>
 			<svg
-				className="lg:w-11 lg:h-11 w-6 h-6"xmlns="http://www.w3.org/2000/svg"
+				className="lg:w-11 lg:h-11 w-6 h-6"
+				xmlns="http://www.w3.org/2000/svg"
 				viewBox="0 0 128 128"
 			>
 				<path
@@ -271,7 +277,8 @@ export function GithubIcon() {
 	return (
 		<>
 			<svg
-				className="lg:w-11 lg:h-11 w-6 h-6"xmlns="http://www.w3.org/2000/svg"
+				className="lg:w-11 lg:h-11 w-6 h-6"
+				xmlns="http://www.w3.org/2000/svg"
 				viewBox="0 0 128 128"
 			>
 				<g className="fill-foreground">
@@ -291,7 +298,8 @@ export function UnderConstructionIcon() {
 	return (
 		<>
 			<svg
-			className="lg:w-11 lg:h-11 w-6 h-6"	xmlns="http://www.w3.org/2000/svg"
+				className="lg:w-10 lg:h-10 w-6 h-6"
+				xmlns="http://www.w3.org/2000/svg"
 				viewBox="0 0 24 24"
 			>
 				<path
@@ -309,7 +317,8 @@ export function GoIcon() {
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
 				xmlnsXlink="http://www.w3.org/1999/xlink"
-				className="lg:w-11 lg:h-11 w-6 h-6"viewBox="0 0 128 128"
+				className="lg:w-11 lg:h-11 w-6 h-6"
+				viewBox="0 0 128 128"
 			>
 				<defs>
 					<path id="go-original-a" d="M18.8 1h90.5v126H18.8z" />
@@ -512,7 +521,8 @@ export function ReactIcon() {
 	return (
 		<>
 			<svg
-				className="lg:w-11 lg:h-11 w-6 h-6"xmlns="http://www.w3.org/2000/svg"
+				className="lg:w-11 lg:h-11 w-6 h-6"
+				xmlns="http://www.w3.org/2000/svg"
 				viewBox="0 0 128 128"
 			>
 				<g fill="#61DAFB">
@@ -528,7 +538,8 @@ export function TypescriptIcon() {
 	return (
 		<>
 			<svg
-				className="lg:w-11 lg:h-11 w-6 h-6"xmlns="http://www.w3.org/2000/svg"
+				className="lg:w-11 lg:h-11 w-6 h-6"
+				xmlns="http://www.w3.org/2000/svg"
 				viewBox="0 0 128 128"
 			>
 				<path fill="#fff" d="M22.67 47h99.67v73.67H22.67z" />
@@ -545,7 +556,8 @@ export function PostgresIcon() {
 	return (
 		<>
 			<svg
-				className="lg:w-11 lg:h-11 w-6 h-6"xmlns="http://www.w3.org/2000/svg"
+				className="lg:w-11 lg:h-11 w-6 h-6"
+				xmlns="http://www.w3.org/2000/svg"
 				viewBox="0 0 128 128"
 			>
 				<path d="M93.809 92.112c.785-6.533.55-7.492 5.416-6.433l1.235.108c3.742.17 8.637-.602 11.513-1.938 6.191-2.873 9.861-7.668 3.758-6.409-13.924 2.873-14.881-1.842-14.881-1.842 14.703-21.815 20.849-49.508 15.543-56.287-14.47-18.489-39.517-9.746-39.936-9.52l-.134.025c-2.751-.571-5.83-.912-9.289-.968-6.301-.104-11.082 1.652-14.709 4.402 0 0-44.683-18.409-42.604 23.151.442 8.841 12.672 66.898 27.26 49.362 5.332-6.412 10.484-11.834 10.484-11.834 2.558 1.699 5.622 2.567 8.834 2.255l.249-.212c-.078.796-.044 1.575.099 2.497-3.757 4.199-2.653 4.936-10.166 6.482-7.602 1.566-3.136 4.355-.221 5.084 3.535.884 11.712 2.136 17.238-5.598l-.22.882c1.474 1.18 1.375 8.477 1.583 13.69.209 5.214.558 10.079 1.621 12.948 1.063 2.868 2.317 10.256 12.191 8.14 8.252-1.764 14.561-4.309 15.136-27.985" />
@@ -568,7 +580,8 @@ export function EmailIcon({ className }: { className?: string }) {
 		<>
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
-				className="lg:w-11 lg:h-11 w-6 h-6"viewBox="0 0 24 24"
+				className="lg:w-11 lg:h-11 w-6 h-6"
+				viewBox="0 0 24 24"
 			>
 				<path
 					className="fill-foreground"
@@ -576,5 +589,45 @@ export function EmailIcon({ className }: { className?: string }) {
 				/>
 			</svg>
 		</>
+	);
+}
+
+export function SpotifyIcon() {
+	return (
+		<>
+			<svg
+				className="lg:w-11 lg:h-11 w-6 h-6"
+				viewBox="0 0 24 24"
+				xmlns="http://www.w3.org/2000/svg"
+				fillRule="evenodd"
+				clipRule="evenodd"
+			>
+				<path
+					className="fill-[#1ED760]"
+					d="M19.098 10.638c-3.868-2.297-10.248-2.508-13.941-1.387-.593.18-1.22-.155-1.399-.748-.18-.593.154-1.22.748-1.4 4.239-1.287 11.285-1.038 15.738 1.605.533.317.708 1.005.392 1.538-.316.533-1.005.709-1.538.392zm-.126 3.403c-.272.44-.847.578-1.287.308-3.225-1.982-8.142-2.557-11.958-1.399-.494.15-1.017-.129-1.167-.623-.149-.495.13-1.016.624-1.167 4.358-1.322 9.776-.682 13.48 1.595.44.27.578.847.308 1.286zm-1.469 3.267c-.215.354-.676.465-1.028.249-2.818-1.722-6.365-2.111-10.542-1.157-.402.092-.803-.16-.895-.562-.092-.403.159-.804.562-.896 4.571-1.045 8.492-.595 11.655 1.338.353.215.464.676.248 1.028zm-5.503-17.308c-6.627 0-12 5.373-12 12 0 6.628 5.373 12 12 12 6.628 0 12-5.372 12-12 0-6.627-5.372-12-12-12z"
+				/>
+			</svg>
+		</>
+	);
+}
+
+export function LoadingIcon({ className }: { className?: string }) {
+	return (
+		<div className={cn("", className)}>
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				width="24"
+				height="24"
+				viewBox="0 0 24 24"
+				fill="none"
+				stroke="currentColor"
+				strokeWidth="2"
+				strokeLinecap="round"
+				strokeLinejoin="round"
+				className="lucide lucide-loader-2"
+			>
+				<path d="M21 12a9 9 0 1 1-6.219-8.56" />
+			</svg>
+		</div>
 	);
 }
