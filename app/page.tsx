@@ -23,7 +23,7 @@ import { Suspense } from "react";
 
 async function SpotifyTile({ className }: { className?: string }) {
 	const data: RecentlyPlayedTracksPage = await getRecentlyPlayed();
-	const track = data.items[0].track;
+	const track = data.items[0]!.track;
 
 	return (
 		<>
@@ -36,7 +36,7 @@ async function SpotifyTile({ className }: { className?: string }) {
 				<Link href={track.external_urls.spotify} target="_blank">
 					<div className="absolute inset-0 p-3 ">
 						<img
-							src={track.album.images[0].url}
+							src={track.album.images[0]!.url}
 							alt={track.name}
 							className="h-full w-full rounded-lg object-cover"
 						/>
@@ -50,9 +50,9 @@ async function SpotifyTile({ className }: { className?: string }) {
 						</p>
 						<p
 							className="overflow-hidden text-ellipsis whitespace-nowrap text-sm"
-							title={track.artists[0].name}
+							title={track.artists[0]!.name}
 						>
-							{track.artists[0].name}
+							{track.artists[0]!.name}
 						</p>
 						<p
 							className="overflow-hidden text-ellipsis whitespace-nowrap text-sm"
