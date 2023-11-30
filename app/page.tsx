@@ -1,20 +1,20 @@
 /* eslint-disable @next/next/no-img-element */
 import { GridTile } from "@/components/ui/grid-tile";
 import {
-    EmailIcon,
-    GithubIcon,
-    GoIcon,
-    LoadingIcon,
-    LocationIcon,
-    NeovimIcon,
-    NextjsIcon,
-    PostgresIcon,
-    ReactIcon,
-    SvelteIcon,
-    TailwindcssIcon,
-    TwitterIcon,
-    TypescriptIcon,
-    UnderConstructionIcon,
+	EmailIcon,
+	GithubIcon,
+	GoIcon,
+	LoadingIcon,
+	LocationIcon,
+	NeovimIcon,
+	NextjsIcon,
+	PostgresIcon,
+	ReactIcon,
+	SvelteIcon,
+	TailwindcssIcon,
+	TwitterIcon,
+	TypescriptIcon,
+	UnderConstructionIcon,
 } from "@/components/ui/icons";
 import { getRecentlyPlayed } from "@/lib/spotify";
 import { cn } from "@/lib/utils";
@@ -23,9 +23,7 @@ import { Suspense } from "react";
 
 async function SpotifyTile({ className }: { className?: string }) {
 	const data = await getRecentlyPlayed();
-	const item = data.items;
-	let track: any;
-	if (item) track = item[0].track;
+	const track = data.items[0].track;
 
 	return (
 		<>
@@ -35,7 +33,7 @@ async function SpotifyTile({ className }: { className?: string }) {
 					className,
 				)}
 			>
-				<Link href={track.external_urls.spotify} target="_blank">
+				<Link href={track?.external_urls.spotify} target="_blank">
 					<div className="absolute inset-0 p-3 ">
 						<img
 							src={track.album.images[0].url}
