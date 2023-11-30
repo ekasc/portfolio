@@ -1,19 +1,20 @@
+/* eslint-disable @next/next/no-img-element */
 import { GridTile } from "@/components/ui/grid-tile";
 import {
-    EmailIcon,
-    GithubIcon,
-    GoIcon,
-    LoadingIcon,
-    LocationIcon,
-    NeovimIcon,
-    NextjsIcon,
-    PostgresIcon,
-    ReactIcon,
-    SvelteIcon,
-    TailwindcssIcon,
-    TwitterIcon,
-    TypescriptIcon,
-    UnderConstructionIcon,
+	EmailIcon,
+	GithubIcon,
+	GoIcon,
+	LoadingIcon,
+	LocationIcon,
+	NeovimIcon,
+	NextjsIcon,
+	PostgresIcon,
+	ReactIcon,
+	SvelteIcon,
+	TailwindcssIcon,
+	TwitterIcon,
+	TypescriptIcon,
+	UnderConstructionIcon,
 } from "@/components/ui/icons";
 import { getRecentlyPlayed } from "@/lib/spotify";
 import { cn } from "@/lib/utils";
@@ -23,7 +24,9 @@ import { Suspense } from "react";
 
 async function SpotifyTile({ className }: { className?: string }) {
 	const data: RecentlyPlayedTracksPage = await getRecentlyPlayed();
-	const track = data.items[0]!.track;
+	const item = data.items;
+	let track: any;
+	if (item.length > 0) track = item[0].track;
 
 	return (
 		<>
@@ -84,7 +87,8 @@ export default function Home() {
 					<div className="col-span-2 grid grid-cols-2 grid-rows-2 gap-5 lg:col-span-3 lg:grid-cols-6 lg:grid-rows-1">
 						<div className="entry col-span-2 space-y-2 rounded-xl border border-border/10 bg-background p-10 lg:col-span-3">
 							<h1 className="text-xl lg:text-4xl">
-								hi, i'm <span className="font-bold">ekas</span>
+								hi, i&apos;m{" "}
+								<span className="font-bold">ekas</span>
 							</h1>
 							<p className="text-sm lg:text-xl">
 								I work with computers, building software and web
@@ -196,8 +200,8 @@ export default function Home() {
 					</div>
 					<div className="col-span-2 flex items-center justify-center rounded-xl border border-border/10 bg-background p-10 lg:col-span-3 lg:row-span-2">
 						<h1 className="lg:text-3xl">
-							Don't hesitate to reach out – let's connect and make
-							things happen!
+							Don&apos;t hesitate to reach out – let&apos;s
+							connect and make things happen!
 						</h1>
 					</div>
 					<Link href="mailto:ekas.esc@gmail.com">
@@ -210,7 +214,11 @@ export default function Home() {
 							<GithubIcon />
 						</GridTile>
 					</Link>
-					<Link href="https://twitter.com/ekascs" target="_blank" className="col-span-2 lg:col-span-1">
+					<Link
+						href="https://twitter.com/ekascs"
+						target="_blank"
+						className="col-span-2 lg:col-span-1"
+					>
 						<GridTile className="col-span-2 lg:col-span-1 hover:border-foreground transition duration-200 ease-in-out">
 							<TwitterIcon />
 						</GridTile>
