@@ -26,7 +26,7 @@ async function SpotifyTile({ className }: { className?: string }) {
 	const data: RecentlyPlayedTracksPage = await getRecentlyPlayed();
 	const item = data.items;
 	let track: any;
-	if (item.length > 0) track = item[0].track;
+	if (item) track = item[0].track;
 
 	return (
 		<>
