@@ -1,29 +1,28 @@
 /* eslint-disable @next/next/no-img-element */
 import { GridTile } from "@/components/ui/grid-tile";
 import {
-	EmailIcon,
-	GithubIcon,
-	GoIcon,
-	LoadingIcon,
-	LocationIcon,
-	NeovimIcon,
-	NextjsIcon,
-	PostgresIcon,
-	ReactIcon,
-	SvelteIcon,
-	TailwindcssIcon,
-	TwitterIcon,
-	TypescriptIcon,
-	UnderConstructionIcon,
+    EmailIcon,
+    GithubIcon,
+    GoIcon,
+    LoadingIcon,
+    LocationIcon,
+    NeovimIcon,
+    NextjsIcon,
+    PostgresIcon,
+    ReactIcon,
+    SvelteIcon,
+    TailwindcssIcon,
+    TwitterIcon,
+    TypescriptIcon,
+    UnderConstructionIcon,
 } from "@/components/ui/icons";
 import { getRecentlyPlayed } from "@/lib/spotify";
 import { cn } from "@/lib/utils";
-import { RecentlyPlayedTracksPage } from "@spotify/web-api-ts-sdk";
 import Link from "next/link";
 import { Suspense } from "react";
 
 async function SpotifyTile({ className }: { className?: string }) {
-	const data: RecentlyPlayedTracksPage = await getRecentlyPlayed();
+	const data = await getRecentlyPlayed();
 	const item = data.items;
 	let track: any;
 	if (item) track = item[0].track;
@@ -39,7 +38,7 @@ async function SpotifyTile({ className }: { className?: string }) {
 				<Link href={track.external_urls.spotify} target="_blank">
 					<div className="absolute inset-0 p-3 ">
 						<img
-							src={track.album.images[0]!.url}
+							src={track.album.images[0].url}
 							alt={track.name}
 							className="h-full w-full rounded-lg object-cover"
 						/>
@@ -53,9 +52,9 @@ async function SpotifyTile({ className }: { className?: string }) {
 						</p>
 						<p
 							className="overflow-hidden text-ellipsis whitespace-nowrap text-sm"
-							title={track.artists[0]!.name}
+							title={track.artists[0].name}
 						>
-							{track.artists[0]!.name}
+							{track.artists[0].name}
 						</p>
 						<p
 							className="overflow-hidden text-ellipsis whitespace-nowrap text-sm"
