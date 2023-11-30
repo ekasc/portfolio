@@ -1,6 +1,11 @@
+import { SpotifyApi } from "@spotify/web-api-ts-sdk";
+
 export async function getRecentlyPlayed() {
-	const { access_token } = await getAccessToken();
-	const resp = await fetch(
+	const accessToken = await getAccessToken();
+	const clientId = process.env.NEXT_PUBLIC_SPOTIFY_CLIENT_ID;
+	const api = SpotifyApi.withAccessToken(clientId!, accessToken)
+	const resp = await api.player.getRecentlyPlayedTracks(1);
+	/* const resp = await fetch(
 		"https://api.spotify.com/v1/me/player/recently-played?limit=1",
 		{
 			headers: {
@@ -10,7 +15,8 @@ export async function getRecentlyPlayed() {
 		},
 	);
 
-	return resp.json();
+	return resp.json(); */
+	return resp.items;
 }
 
 async function getAccessToken() {

@@ -24,8 +24,7 @@ import { Suspense } from "react";
 // million-ignore
 async function SpotifyTile({ className }: { className?: string }) {
 	const data = await getRecentlyPlayed();
-	console.log(data)
-	const track = data?.items[0]?.track;
+	const track = data[0].track
 
 	return (
 		<>
