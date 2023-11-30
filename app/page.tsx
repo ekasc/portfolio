@@ -21,10 +21,8 @@ import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { Suspense } from "react";
 
-// million-ignore
 async function SpotifyTile({ className }: { className?: string }) {
-	const data = await getRecentlyPlayed();
-	const track = data[0].track
+	const track = await getRecentlyPlayed();
 
 	return (
 		<>
@@ -34,32 +32,32 @@ async function SpotifyTile({ className }: { className?: string }) {
 					className,
 				)}
 			>
-				<Link href={track?.external_urls?.spotify} target="_blank">
+				<Link href={track.href} target="_blank">
 					<div className="absolute inset-0 p-3 ">
 						<img
-							src={track?.album?.images[0]?.url}
-							alt={track.name}
+							src={track.cover}
+							alt={track.title}
 							className="h-full w-full rounded-lg object-cover"
 						/>
 					</div>
 					<div className="relative flex h-full w-full flex-col justify-end px-5 pb-4">
 						<p
 							className="text-md overflow-hidden text-ellipsis whitespace-nowrap font-bold"
-							title={track?.name}
+							title={track.title}
 						>
-							{track?.name}
+							{track.title}
 						</p>
 						<p
 							className="overflow-hidden text-ellipsis whitespace-nowrap text-sm"
-							title={track?.artists[0]?.name}
+							title={track.artist}
 						>
-							{track?.artists[0]?.name}
+							{track.artist}
 						</p>
 						<p
 							className="overflow-hidden text-ellipsis whitespace-nowrap text-sm"
-							title={track?.album?.name}
+							title={track.album}
 						>
-							{track?.album?.name}
+							{track.album}
 						</p>
 					</div>
 				</Link>
