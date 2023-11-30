@@ -9,19 +9,20 @@ interface TrackType {
 }
 
 export async function getRecentlyPlayed(): Promise<TrackType> {
-	const { access_token } = await getAccessToken();
+	const { access_token, ...p } = await getAccessToken();
+	console.log({access_token, p})
 	const resp = await fetch(
 		"https://api.spotify.com/v1/me/player/recently-played?limit=1",
 		{
 			headers: {
 				Authorization: `Bearer ${access_token}`,
 			},
+			method: "GET",
 			cache: "no-store",
 		},
 	);
 
 	const data = (await resp.json()) as RecentlyPlayedTracksPage;
-	console.log({data})
 	if (data.items) {
 		return {
 			title: data.items[0].track.name,
@@ -60,6 +61,7 @@ async function getAccessToken() {
 				`${clientId}:${clientSecret}`,
 			).toString("base64")}`,
 		},
+		cache:"no-store",
 		body: `grant_type=refresh_token&refresh_token=${refreshToken}`,
 	});
 	return resp.json();
