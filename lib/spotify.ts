@@ -21,6 +21,7 @@ export async function getRecentlyPlayed(): Promise<TrackType> {
 	);
 
 	const data = (await resp.json()) as RecentlyPlayedTracksPage;
+	console.log({data})
 	if (data.items) {
 		return {
 			title: data.items[0].track.name,
