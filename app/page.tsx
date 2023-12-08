@@ -93,7 +93,7 @@ export default function Home() {
 							</p>
 						</div>
 						<GridTile className="col-span-1 flex gap-2 lg:col-span-2 lg:grid-cols-2 lg:grid-rows-1 lg:text-3xl">
-							<LocationIcon /> New Delhi
+							<LocationIcon /> Vancouver
 						</GridTile>
 						<Suspense
 							fallback={
