@@ -1,4 +1,4 @@
-import { RecentlyPlayedTracksPage } from "@spotify/web-api-ts-sdk";
+import { RecentlyPlayedTracksPage, Track } from "@spotify/web-api-ts-sdk";
 
 interface TrackType {
 	title: string;
@@ -10,9 +10,9 @@ interface TrackType {
 
 export async function getRecentlyPlayed(): Promise<TrackType> {
 	const { access_token, ...p } = await getAccessToken();
-	console.log({access_token, p})
+	console.log({ access_token, p });
 	const resp = await fetch(
-		"https://api.spotify.com/v1/me/player/recently-played?limit=1",
+		"https://api.spotify.com/v1/tracks/6BU1RZexmvJcBjgagVVt3M",
 		{
 			headers: {
 				Authorization: `Bearer ${access_token}`,
@@ -22,14 +22,21 @@ export async function getRecentlyPlayed(): Promise<TrackType> {
 		},
 	);
 
-	const data = (await resp.json()) as RecentlyPlayedTracksPage;
-	if (data.items) {
+	const data = (await resp.json()) as Track;
+	if (data) {
+		// return {
+		// 	title: data.items[0].track.name,
+		// 	album: data.items[0].track.album.name,
+		// 	artist: data.items[0].track.artists[0].name,
+		// 	cover: data.items[0].track.album.images[0].url,
+		// 	href: data.items[0].track.external_urls.spotify,
+		// } satisfies TrackType;
 		return {
-			title: data.items[0].track.name,
-			album: data.items[0].track.album.name,
-			artist: data.items[0].track.artists[0].name,
-			cover: data.items[0].track.album.images[0].url,
-			href: data.items[0].track.external_urls.spotify,
+			title: data.name,
+			album: data.album.name,
+			artist: data.artists[0].name,
+			cover: data.album.images[0].url,
+			href: data.external_urls.spotify,
 		} satisfies TrackType;
 	}
 	return {
@@ -61,7 +68,7 @@ async function getAccessToken() {
 				`${clientId}:${clientSecret}`,
 			).toString("base64")}`,
 		},
-		cache:"no-store",
+		cache: "no-store",
 		body: `grant_type=refresh_token&refresh_token=${refreshToken}`,
 	});
 	return resp.json();
