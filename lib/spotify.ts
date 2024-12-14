@@ -12,7 +12,7 @@ export async function getRecentlyPlayed(): Promise<TrackType> {
 	const { access_token, ...p } = await getAccessToken();
 	console.log({ access_token, p });
 	const resp = await fetch(
-		"https://api.spotify.com/v1/tracks/6BU1RZexmvJcBjgagVVt3M",
+		"https://api.spotify.com/v1/me/player/recently-played?limit=1",
 		{
 			headers: {
 				Authorization: `Bearer ${access_token}`,
@@ -22,22 +22,22 @@ export async function getRecentlyPlayed(): Promise<TrackType> {
 		},
 	);
 
-	const data = (await resp.json()) as Track;
+	const data = (await resp.json()) as RecentlyPlayedTracksPage;
 	if (data) {
-		// return {
-		// 	title: data.items[0].track.name,
-		// 	album: data.items[0].track.album.name,
-		// 	artist: data.items[0].track.artists[0].name,
-		// 	cover: data.items[0].track.album.images[0].url,
-		// 	href: data.items[0].track.external_urls.spotify,
-		// } satisfies TrackType;
 		return {
-			title: data.name,
-			album: data.album.name,
-			artist: data.artists[0].name,
-			cover: data.album.images[0].url,
-			href: data.external_urls.spotify,
+			title: data.items[0].track.name,
+			album: data.items[0].track.album.name,
+			artist: data.items[0].track.artists[0].name,
+			cover: data.items[0].track.album.images[0].url,
+			href: data.items[0].track.external_urls.spotify,
 		} satisfies TrackType;
+		// return {
+		// 	title: data.name,
+		// 	album: data.album.name,
+		// 	artist: data.artists[0].name,
+		// 	cover: data.album.images[0].url,
+		// 	href: data.external_urls.spotify,
+		// } satisfies TrackType;
 	}
 	return {
 		title: "No tracks found",

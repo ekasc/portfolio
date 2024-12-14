@@ -71,15 +71,10 @@ export default function Home() {
 		<>
 			<div className="relative h-full ">
 				<div className="absolute flex h-full w-full justify-center">
-					<div className="sticky top-0 z-40 flex h-[60px] w-[120px] items-center justify-center rounded-b-full border-b border-foreground/20 bg-background lg:-top-[60px] lg:h-[120px] lg:rounded-full lg:border-b">
-						<div className=" flex h-[55px] w-[110px] items-center justify-center rounded-b-full border-b border-foreground/30 bg-background lg:h-[110px] lg:rounded-full">
-							<div className=" h-[50px] w-[100px] rounded-br-full lg:h-[100px] lg:rounded-full"></div>
-						</div>
-					</div>
 					<div className="bg-grid fixed z-0 h-full w-full"></div>
 					<div className="bg-conic fixed z-10 h-full w-full"></div>
 				</div>
-				<div className="relative z-30 mx-8 grid grid-cols-2 gap-5 pb-20 pt-[80px] lg:mx-40 lg:grid-cols-3 lg:pt-[150px]">
+				<div className="relative z-30 mx-8 grid grid-cols-2 gap-5 pb-20 pt-[80px] lg:mx-40 lg:grid-cols-3 ">
 					<div className="col-span-2 grid grid-cols-2 grid-rows-2 gap-5 lg:col-span-3 lg:grid-cols-6 lg:grid-rows-1">
 						<div className="entry col-span-2 space-y-2 rounded-xl border border-border/10 bg-background p-10 lg:col-span-3">
 							<h1 className="text-xl lg:text-4xl">
@@ -183,7 +178,7 @@ export default function Home() {
 										</Link>
 									</GridTile>
 								</div>
-								<div className="absolute inset-0 flex flex-col items-center justify-center space-y-2 rounded-xl border border-border/10 bg-muted/90 p-10 group-hover:opacity-0 pointer-events-none transition duration-[400ms] ease-in-out">
+								<div className="pointer-events-none absolute inset-0 flex flex-col items-center justify-center space-y-2 rounded-xl border border-border/10 bg-muted/90 p-10 transition duration-[400ms] ease-in-out group-hover:opacity-0">
 									<div>
 										<UnderConstructionIcon />
 									</div>
@@ -201,12 +196,12 @@ export default function Home() {
 						</h1>
 					</div>
 					<Link href="mailto:ekas.esc@gmail.com">
-						<GridTile className="hover:border-foreground transition duration-200 ease-in-out">
+						<GridTile className="transition duration-200 ease-in-out hover:border-foreground">
 							<EmailIcon />
 						</GridTile>
 					</Link>
 					<Link href="https://github.com/ekasc" target="_blank">
-						<GridTile className="hover:border-foreground transition duration-200 ease-in-out">
+						<GridTile className="transition duration-200 ease-in-out hover:border-foreground">
 							<GithubIcon />
 						</GridTile>
 					</Link>
@@ -215,7 +210,7 @@ export default function Home() {
 						target="_blank"
 						className="col-span-2 lg:col-span-1"
 					>
-						<GridTile className="col-span-2 lg:col-span-1 hover:border-foreground transition duration-200 ease-in-out">
+						<GridTile className="col-span-2 transition duration-200 ease-in-out hover:border-foreground lg:col-span-1">
 							<TwitterIcon />
 						</GridTile>
 					</Link>
